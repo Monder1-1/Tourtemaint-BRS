@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta
+        name="theme-color"
+        content="#07090f"
+    >
+
+    <meta
+        name="description"
+        content="Tournament BRS - Brawl Stars Tournament Manager"
+    >
+
+    <title>Tournament BRS</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+<div id="app">
+
+    <!-- ============================= -->
+    <!-- TOP NAVIGATION -->
+    <!-- ============================= -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <!-- CUSTOM SVG LOGO -->
+            <div class="brand-logo">
+
+                <svg
+                    viewBox="0 0 64 64"
+                    width="42"
+                    height="42"
+                    aria-hidden="true"
+                >
+
+                    <path
+                        d="M32 5L52 12V29C52 43 43 54 32 59C21 54 12 43 12 29V12L32 5Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                    />
+
+                    <path
+                        d="M23 24L32 15L41 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+
+                    <path
+                        d="M22 32H42"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                    />
+
+                    <path
+                        d="M26 39H38"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                    />
+
+                </svg>
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <strong>
+                    TOURNAMENT BRS
+                </strong>
+
+                <span>
+                    BRAWL STARS TOURNAMENT MANAGER
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="home-button"
+            onclick="goHome()"
+            aria-label="الرئيسية"
+        >
+
+            <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+            >
+
+                <path
+                    d="M3 10.5L12 3L21 10.5V21H14V15H10V21H3V10.5Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                />
+
+            </svg>
+
+            <span>
+                الرئيسية
+            </span>
+
+        </button>
+
+    </header>
+
+
+
+    <!-- ============================= -->
+    <!-- MAIN -->
+    <!-- ============================= -->
+
+    <main>
+
+
+        <!-- ================================= -->
+        <!-- HOME SCREEN -->
+        <!-- ================================= -->
+
+        <section
+            id="home"
+            class="screen active"
+        >
+
+
+            <!-- HERO -->
+            <div class="hero">
+
+                <div class="hero-content">
+
+                    <div class="status-label">
+
+                        <span class="status-dot"></span>
+
+                        TOURNAMENT SYSTEM
+
+                    </div>
+
+
+                    <h1>
+                        أنشئ بطولتك
+                        <span>
+                            بطريقتك
+                        </span>
+                    </h1>
+
+
+                    <p>
+                        نظام متكامل لإدارة بطولات Brawl Stars،
+                        من إنشاء الفرق إلى تسجيل النتائج وتتويج البطل.
+                    </p>
+
+                </div>
+
+
+                <!-- HERO GRAPHIC -->
+                <div class="hero-graphic">
+
+                    <div class="hero-ring ring-one"></div>
+
+                    <div class="hero-ring ring-two"></div>
+
+                    <div class="hero-core">
+
+                        <svg
+                            viewBox="0 0 80 80"
+                            width="70"
+                            height="70"
+                        >
+
+                            <path
+                                d="M18 24H62L57 58H23L18 24Z"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="3"
+                            />
+
+                            <path
+                                d="M25 24C21 18 18 13 17 9"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M55 24C59 18 62 13 63 9"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M28 43H52"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M32 51H48"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- MODE TITLE -->
+            <!-- ================================= -->
+
+            <div class="section-title">
+
+                <div>
+
+                    <span>
+                        TOURNAMENT MODES
+                    </span>
+
+                    <h2>
+                        اختر نظام البطولة
+                    </h2>
+
+                </div>
+
+                <div class="section-line"></div>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- TOURNAMENT MODES -->
+            <!-- ================================= -->
+
+            <div class="mode-grid">
+
+
+                <!-- ============================= -->
+                <!-- CHAMPIONS FORMAT -->
+                <!-- ============================= -->
+
+                <button
+                    class="mode-card mode-champions"
+                    onclick="startMode('ucl')"
+                >
+
+                    <div class="mode-number">
+                        01
+                    </div>
+
+
+                    <div class="mode-icon">
+
+                        <svg
+                            viewBox="0 0 64 64"
+                            width="46"
+                            height="46"
+                        >
+
+                            <path
+                                d="M18 12H46V25C46 38 39 45 32 48C25 45 18 38 18 25V12Z"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                            />
+
+                            <path
+                                d="M18 18H10V23C10 30 14 34 20 34"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                            />
+
+                            <path
+                                d="M46 18H54V23C54 30 50 34 44 34"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                            />
+
+                            <path
+                                d="M32 48V55"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                            />
+
+                            <path
+                                d="M24 55H40"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="mode-info">
+
+                        <span class="mode-label">
+                            CHAMPIONS FORMAT
+                        </span>
+
+                        <h3>
+                            دوري أبطال أوروبا القديم
+                        </h3>
+
+                        <p>
+                            مجموعات، ترتيب، تأهل ثم أدوار إقصائية حتى النهائي.
+                        </p>
+
+                    </div>
+
+
+                    <div class="mode-arrow">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            width="22"
+                            height="22"
+                        >
+
+                            <path
+                                d="M9 5L16 12L9 19"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                </button>
+
+
+
+                <!-- ============================= -->
+                <!-- KNOCKOUT -->
+                <!-- ============================= -->
+
+                <button
+                    class="mode-card mode-knockout"
+                    onclick="startMode('knockout')"
+                >
+
+                    <div class="mode-number">
+                        02
+                    </div>
+
+
+                    <div class="mode-icon">
+
+                        <svg
+                            viewBox="0 0 64 64"
+                            width="46"
+                            height="46"
+                        >
+
+                            <path
+                                d="M10 16H27V28H40V16H54"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M10 48H27V36H40V48H54"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M40 28V36"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                            />
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="mode-info">
+
+                        <span class="mode-label">
+                            KNOCKOUT
+                        </span>
+
+                        <h3>
+                            الأدوار الإقصائية
+                        </h3>
+
+                        <p>
+                            خروج مغلوب مع Bracket وتنقل تلقائي بين الأدوار.
+                        </p>
+
+                    </div>
+
+
+                    <div class="mode-arrow">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            width="22"
+                            height="22"
+                        >
+
+                            <path
+                                d="M9 5L16 12L9 19"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                </button>
+
+
+
+                <!-- ============================= -->
+                <!-- LEAGUE -->
+                <!-- ============================= -->
+
+                <button
+                    class="mode-card mode-league"
+                    onclick="startMode('league')"
+                >
+
+                    <div class="mode-number">
+                        03
+                    </div>
+
+
+                    <div class="mode-icon">
+
+                        <svg
+                            viewBox="0 0 64 64"
+                            width="46"
+                            height="46"
+                        >
+
+                            <path
+                                d="M12 50H52"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M18 44V34"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="5"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M32 44V23"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="5"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M46 44V14"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="5"
+                                stroke-linecap="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="mode-info">
+
+                        <span class="mode-label">
+                            LEAGUE
+                        </span>
+
+                        <h3>
+                            الدوري العادي
+                        </h3>
+
+                        <p>
+                            مباريات، نقاط، فوز وتعادل وخسارة وترتيب تلقائي.
+                        </p>
+
+                    </div>
+
+
+                    <div class="mode-arrow">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            width="22"
+                            height="22"
+                        >
+
+                            <path
+                                d="M9 5L16 12L9 19"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- SAVED TOURNAMENTS -->
+            <!-- ================================= -->
+
+            <div
+                id="savedBox"
+                class="saved-box"
+            ></div>
+
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- SETUP SCREEN -->
+        <!-- ================================= -->
+
+        <section
+            id="setup"
+            class="screen"
+        >
+
+            <div class="section-head">
+
+                <button
+                    class="back"
+                    onclick="goHome()"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="22"
+                        height="22"
+                    >
+
+                        <path
+                            d="M15 5L8 12L15 19"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+
+                    </svg>
+
+                </button>
+
+
+                <div>
+
+                    <span class="page-label">
+                        CREATE TOURNAMENT
+                    </span>
+
+                    <h1 id="setupTitle"></h1>
+
+                    <p id="setupDesc"></p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="panel">
+
+                <div class="form-section">
+
+                    <label>
+                        اسم البطولة
+
+                        <input
+                            id="tourName"
+                            type="text"
+                            placeholder="مثال: BR PRO"
+                        >
+
+                    </label>
+
+                </div>
+
+
+                <div
+                    id="setupOptions"
+                    class="form-section"
+                ></div>
+
+
+                <div class="form-section">
+
+                    <label>
+                        الفرق
+
+                        <textarea
+                            id="teamInput"
+                            rows="10"
+                            placeholder="اكتب اسم كل فريق في سطر مستقل..."
+                        ></textarea>
+
+                    </label>
+
+                    <div class="form-help">
+                        كل فريق في سطر مستقل.
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    onclick="createTournament()"
+                >
+
+                    <span>
+                        إنشاء البطولة
+                    </span>
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="20"
+                        height="20"
+                    >
+
+                        <path
+                            d="M5 12H19M13 6L19 12L13 18"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+
+                    </svg>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- TOURNAMENT SCREEN -->
+        <!-- ================================= -->
+
+        <section
+            id="tournament"
+            class="screen"
+        >
+
+            <div class="section-head">
+
+                <button
+                    class="back"
+                    onclick="goHome()"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="22"
+                        height="22"
+                    >
+
+                        <path
+                            d="M15 5L8 12L15 19"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+
+                    </svg>
+
+                </button>
+
+
+                <div>
+
+                    <span class="page-label">
+                        TOURNAMENT
+                    </span>
+
+                    <h1 id="tTitle"></h1>
+
+                    <p id="tSub"></p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TABS -->
+
+            <div
+                id="tabs"
+                class="tabs"
+            ></div>
+
+
+
+            <!-- CONTENT -->
+
+            <div
+                id="content"
+                class="tournament-content"
+            ></div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- ================================= -->
+<!-- TOAST -->
+<!-- ================================= -->
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
